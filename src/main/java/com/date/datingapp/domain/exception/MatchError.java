@@ -1,4 +1,4 @@
-package com.date.datingapp.domain.entity.match;
+package com.date.datingapp.domain.exception;
 
 import com.date.datingapp.shared.exception.CodedException;
 
