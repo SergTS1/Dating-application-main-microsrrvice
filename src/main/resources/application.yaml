@@ -1,9 +1,23 @@
-spring:
-  application:
-    name: datingapp
-
 server:
   port: 8080
+
+spring:
+  application:
+    name: match-service
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/match_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    change-log: classpath:db/migration/changelog.xml
+#    default-schema: match_service
 
 springdoc:
   api-docs:

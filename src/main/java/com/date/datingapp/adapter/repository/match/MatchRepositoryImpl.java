@@ -4,6 +4,7 @@ import com.date.datingapp.boundary.repository.MatchRepository;
 import com.date.datingapp.domain.entity.match.Match;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -17,5 +18,8 @@ public class MatchRepositoryImpl implements MatchRepository {
 
     }
 
+    public Optional<Match> findById(UUID uuid) {
+        return Optional.empty();
+    }
 
 }
