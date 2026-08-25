@@ -38,7 +38,7 @@ public class MatchUseCaseImpl implements MatchUseCase {
             throw MatchUseCaseError.paramsAreRequired();
         }
         Match match = matchRepository.findById(matchId.value())
-                .orElseThrow(MatchUseCaseError::matchNotFound);
+                .orElseThrow(() -> MatchUseCaseError.matchNotFound(matchId.value()));
 
         // тут нужно передавать именно текущего пользователя, пока не понятно какой из них текущий
         match.unMatch(match.getUserA());

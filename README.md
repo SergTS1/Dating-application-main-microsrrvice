@@ -3,22 +3,21 @@
 
 ## Микросервисы
 1. User-service
-2. Match-service ✅
-3. Profile-service
-4. Chat-service
-5. Notification-service
-6. Media-service
-7. Auth-service
-8. Bank-service
+2. Match-service ✅ 
+3. Chat-service
+4. Notification-service
+5. Media-service
+6. Auth-service
+7. Bank-service
 
-### Выбранная сущность User
+### Выбранная сущность Match
 ### Функционал: 
-1. Добавлние пользователя
-2. Получение пользователя по id
+1. Добавлние Match
+2. Получение Match по id
 
 ### Стек технологий
 1. Spring Boot
-2. MapStruct
+2. PostgresQL
 3. Lombok
 4. Swagger
 
