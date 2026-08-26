@@ -14,6 +14,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @FieldDefaults(makeFinal = true, level = lombok.AccessLevel.PRIVATE)
 @AllArgsConstructor
@@ -39,10 +41,10 @@ public class MatchController {
     @Operation(summary = "Delete match by id", description = "Deletes an existing match by id.")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void unMatch(@PathVariable MatchId id
+    public void unMatch(@PathVariable UUID id
  //                                 ,@AuthenticationPrincipal User currentUser
                                                                 ) {
-        matchUseCase.unMatch(id
+        matchUseCase.unMatch(MatchId.of(id)
  //               , currentUser.getId()
         );
     }
