@@ -30,6 +30,18 @@ public class Match {
         return new Match(MatchId.generate(), userA, userB, Instant.now());
     }
 
+    public static Match restore(
+            MatchId id,
+            UserId userA,
+            UserId userB,
+            Instant createdAt,
+            MatchStatus status
+    ) {
+        Match match = new Match(id, userA, userB, createdAt);
+        match.status = status;
+        return match;
+    }
+
     private boolean isParticipant(UserId userId) {
         return userA.equals(userId) || userB.equals(userId);
     }
@@ -54,5 +66,13 @@ public class Match {
 
     public UserId getUserB() {
         return userB;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public MatchStatus getStatus() {
+        return status;
     }
 }

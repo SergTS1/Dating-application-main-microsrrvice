@@ -1,4 +1,4 @@
-# Create User Request
+# Create Match Request
 
 
 ## Request
@@ -7,7 +7,7 @@
 ### URL
 
 
-`POST api/v1/user`
+`POST api/v1/match`
 
 
 ### Body
@@ -21,15 +21,9 @@
 
         "attributes": {
 
-            "id" : "1",
+            "user1Uuid" : "123e4567-e89b-12d3-a456-426614174000",
 
-            "name": "someName",
-
-            "email": "someEmail@gmail.com",
-
-            "phoneNumber": "89204050777",
-
-            "createdAt" : "2025-10-02T14:30:00Z"
+            "user2Uuid" : "123e4567-e89b-12d3-a456-426614174001"
 
         }
 
