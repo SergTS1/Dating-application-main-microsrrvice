@@ -4,7 +4,7 @@ import com.date.datingapp.boundary.model.CreateMatchParam;
 import com.date.datingapp.boundary.repository.MatchRepository;
 import com.date.datingapp.boundary.usecase.MatchUseCase;
 import com.date.datingapp.domain.entity.match.Match;
-import com.date.datingapp.domain.valueobject.MatchId;
+import com.date.datingapp.domain.valueobject.match.MatchId;
 import com.date.datingapp.usecase.exception.MatchUseCaseError;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;

@@ -1,4 +1,4 @@
-package com.date.datingapp.domain.valueobject;
+package com.date.datingapp.domain.valueobject.user;
 
 import java.util.Objects;
 import java.util.UUID;

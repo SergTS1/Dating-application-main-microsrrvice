@@ -1,4 +1,4 @@
-package com.date.datingapp.adapter.controller.http.convertor;
+package com.date.datingapp.adapter.controller.http.convertor.match;
 
 
 import com.date.datingapp.adapter.controller.http.response.CreateMatchResponse;

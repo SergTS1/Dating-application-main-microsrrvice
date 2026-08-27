@@ -4,8 +4,9 @@ import com.date.datingapp.domain.valueobject.user.UserId;
 import lombok.Data;
 
 @Data
-public class CreateMatchParam {
+public class CreateSwipeParam {
 
-    private UserId userId1;
-    private UserId userId2;
+    private UserId from;
+    private UserId to;
+
 }

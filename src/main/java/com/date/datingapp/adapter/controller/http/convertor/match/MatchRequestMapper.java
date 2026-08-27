@@ -1,8 +1,8 @@
-package com.date.datingapp.adapter.controller.http.convertor;
+package com.date.datingapp.adapter.controller.http.convertor.match;
 
 import com.date.datingapp.adapter.controller.http.request.CreateMatchRequest;
 import com.date.datingapp.boundary.model.CreateMatchParam;
-import com.date.datingapp.domain.valueobject.UserId;
+import com.date.datingapp.domain.valueobject.user.UserId;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
