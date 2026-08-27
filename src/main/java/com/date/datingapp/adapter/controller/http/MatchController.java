@@ -1,12 +1,12 @@
 package com.date.datingapp.adapter.controller.http;
 
-import com.date.datingapp.adapter.controller.http.convertor.MatchRequestMapper;
-import com.date.datingapp.adapter.controller.http.convertor.MatchResponseMapper;
+import com.date.datingapp.adapter.controller.http.convertor.match.MatchRequestMapper;
+import com.date.datingapp.adapter.controller.http.convertor.match.MatchResponseMapper;
 import com.date.datingapp.adapter.controller.http.request.CreateMatchRequest;
 import com.date.datingapp.adapter.controller.http.response.CreateMatchResponse;
 import com.date.datingapp.boundary.model.CreateMatchParam;
 import com.date.datingapp.boundary.usecase.MatchUseCase;
-import com.date.datingapp.domain.valueobject.MatchId;
+import com.date.datingapp.domain.valueobject.match.MatchId;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;

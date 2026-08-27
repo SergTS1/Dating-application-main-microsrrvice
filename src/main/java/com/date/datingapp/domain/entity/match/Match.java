@@ -2,8 +2,8 @@ package com.date.datingapp.domain.entity.match;
 
 import com.date.datingapp.domain.enums.MatchStatus;
 import com.date.datingapp.domain.exception.MatchError;
-import com.date.datingapp.domain.valueobject.MatchId;
-import com.date.datingapp.domain.valueobject.UserId;
+import com.date.datingapp.domain.valueobject.match.MatchId;
+import com.date.datingapp.domain.valueobject.user.UserId;
 
 import java.time.Instant;
 

@@ -2,8 +2,8 @@ package com.date.datingapp.adapter.repository.match.converter;
 
 import com.date.datingapp.adapter.repository.match.model.MatchJpaEntity;
 import com.date.datingapp.domain.entity.match.Match;
-import com.date.datingapp.domain.valueobject.MatchId;
-import com.date.datingapp.domain.valueobject.UserId;
+import com.date.datingapp.domain.valueobject.match.MatchId;
+import com.date.datingapp.domain.valueobject.user.UserId;
 import org.springframework.stereotype.Component;
 
 @Component
