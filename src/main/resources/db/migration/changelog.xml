@@ -6,5 +6,6 @@
     
     <include file="/db/migration/1_0_0_init_db.sql"/>
     <include file="/db/migration/1_0_1_add_swipe_table.sql"/>
+    <include file="/db/migration/1_0_2_add_constraint_swipe_table.sql"/>
 
 </databaseChangeLog>
