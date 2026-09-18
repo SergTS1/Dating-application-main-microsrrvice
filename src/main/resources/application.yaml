@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
@@ -17,7 +17,18 @@ spring:
 
   liquibase:
     change-log: classpath:db/migration/changelog.xml
-#    default-schema: match_service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: match-service
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      properties:
+#        spring.json.trusted.packages: com.date.datingapp
 
 springdoc:
   api-docs:
