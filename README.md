@@ -20,12 +20,13 @@
 2. PostgresQL
 3. Lombok
 4. Swagger
+5. Kafka
 
 ### Спецификация
 JSON:API
 
 ### Инструкции по запуску:
 1. Запускаем приложение
-2. Проходим по ссылке http://localhost:8080/swagger-ui/index.html#/
+2. Проходим по ссылке http://localhost:8081/swagger-ui/index.html#/
 3. Примеры запросов уже будут в сваггере
 
