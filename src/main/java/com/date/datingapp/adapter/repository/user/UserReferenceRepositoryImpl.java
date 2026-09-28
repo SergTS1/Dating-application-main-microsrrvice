@@ -21,4 +21,10 @@ public class UserReferenceRepositoryImpl implements UserReferenceRepository {
     public void save(UserId userId) {
         userReferenceJpaRepository.save(new UserReferenceJpaEntity(userId.value()));
     }
+
+    @Override
+    public void deleteById(UserId userId) {
+        userReferenceJpaRepository.findById(userId.value())
+                .ifPresent(userReferenceJpaRepository::delete);
+    }
 }
