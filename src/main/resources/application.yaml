@@ -25,11 +25,6 @@ spring:
       auto-offset-reset: earliest
       enable-auto-commit: false
 
-#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#      properties:
-#        spring.json.trusted.packages: com.date.datingapp
-
 springdoc:
   api-docs:
     path: /api-docs
