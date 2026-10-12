@@ -15,6 +15,12 @@ spring:
     hibernate:
       ddl-auto: validate
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/dating
+
   liquibase:
     change-log: classpath:db/migration/changelog.xml
 

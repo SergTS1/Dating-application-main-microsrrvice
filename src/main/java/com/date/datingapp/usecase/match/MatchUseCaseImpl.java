@@ -5,6 +5,7 @@ import com.date.datingapp.boundary.repository.MatchRepository;
 import com.date.datingapp.boundary.usecase.MatchUseCase;
 import com.date.datingapp.domain.entity.match.Match;
 import com.date.datingapp.domain.valueobject.match.MatchId;
+import com.date.datingapp.domain.valueobject.user.UserId;
 import com.date.datingapp.usecase.exception.MatchUseCaseError;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -33,18 +34,14 @@ public class MatchUseCaseImpl implements MatchUseCase {
     }
 
     @Override
-    public void unMatch(MatchId matchId) {
-        if (matchId == null) {
+    public void unMatch(MatchId matchId, UserId userId) {
+        if (matchId == null || userId == null) {
             throw MatchUseCaseError.paramsAreRequired();
         }
         Match match = matchRepository.findById(matchId.value())
                 .orElseThrow(() -> MatchUseCaseError.matchNotFound(matchId.value()));
 
-        // тут нужно передавать именно текущего пользователя, пока не понятно какой из них текущий
-        match.unMatch(match.getUserA());
+        match.unMatch(userId);
         matchRepository.save(match);
-
-        // Либо удалять мэтч, либо просто менять статус на "unmatched". Решить позже. Пока оставлю удаление мэтча
-        matchRepository.deleteByMatchId(matchId.value());
     }
 }

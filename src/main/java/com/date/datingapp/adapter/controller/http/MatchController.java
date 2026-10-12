@@ -7,11 +7,14 @@ import com.date.datingapp.adapter.controller.http.response.CreateMatchResponse;
 import com.date.datingapp.boundary.model.CreateMatchParam;
 import com.date.datingapp.boundary.usecase.MatchUseCase;
 import com.date.datingapp.domain.valueobject.match.MatchId;
+import com.date.datingapp.domain.valueobject.user.UserId;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -36,16 +39,11 @@ public class MatchController {
         return responseMapper.toResponse(matchId.value());
     }
 
-
-    //Закоментирована проверка текущего юзера. что бы неболо возможно сти у левого пользователя удалить мэтч
-    @Operation(summary = "Delete match by id", description = "Deletes an existing match by id.")
+    @Operation(summary = "Delete match by id", description = "Delete an existing match by id.")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void unMatch(@PathVariable UUID id
- //                                 ,@AuthenticationPrincipal User currentUser
-                                                                ) {
-        matchUseCase.unMatch(MatchId.of(id)
- //               , currentUser.getId()
-        );
+    public void unMatch(@PathVariable UUID id, @AuthenticationPrincipal Jwt jwt) {
+        UserId currentUserId = new UserId(UUID.fromString(jwt.getSubject()));
+        matchUseCase.unMatch(MatchId.of(id), currentUserId);
     }
 }
